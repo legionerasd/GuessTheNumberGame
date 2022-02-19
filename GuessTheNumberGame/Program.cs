@@ -73,8 +73,6 @@ namespace GuessTheNumberGame
                     Console.WriteLine("Вы победили!");
                     break;
                 }
-
-                Console.WriteLine("Попробовать ещё?");
             }
         }
     }
