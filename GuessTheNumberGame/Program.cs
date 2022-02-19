@@ -14,8 +14,7 @@ namespace GuessTheNumberGame
             int numberOfAttempts = 5;
             
             int secretNumber = new Random().Next(minimumHiddenNumber, maximumHiddenNumber);
-            bool isWin = false;
-            
+
             Console.WriteLine("Добро пожаловать в игру 'Угадай число'");
             Console.Write("Как вас зовут?: ");
             string? userName = Console.ReadLine();
@@ -24,7 +23,7 @@ namespace GuessTheNumberGame
                 $"Я загадал тебе число от {minimumHiddenNumber} до {maximumHiddenNumber}. " +
                 $"Попробуй отгадать!");
 
-            while (!isWin)
+            while (true)
             {
                 bool isIntNumber = false;
                 
