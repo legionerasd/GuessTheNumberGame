@@ -20,8 +20,6 @@ namespace GuessTheNumberGame
                 $"Я загадал тебе число от {minimumHiddenNumber} до {maximumHiddenNumber}. " +
                 $"Попробуй отгадать!");
 
-            Console.WriteLine(secretNumber);
-            
             while (!isWin)
             {
                 bool isIntNumber = false;
