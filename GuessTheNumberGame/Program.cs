@@ -6,9 +6,13 @@ namespace GuessTheNumberGame
     {
         static void Main(string[] args)
         {
-            int minimumHiddenNumber = 1;
-            int maximumHiddenNumber = 50;
+            // Минимальное загаданное число.
+            int minimumHiddenNumber = 0;
+            // Максимальное загаданное число.
+            int maximumHiddenNumber = 100;
+            // Колличество попыток.
             int numberOfAttempts = 5;
+            
             int secretNumber = new Random().Next(minimumHiddenNumber, maximumHiddenNumber);
             bool isWin = false;
             
@@ -38,21 +42,28 @@ namespace GuessTheNumberGame
                     
                 isIntNumber = int.TryParse(userInput, out int userNumber);
                 
-                
-                if (!isIntNumber)
-                {
-                    Console.WriteLine("#### Ошибка ввода! ####");
-                    Console.WriteLine($"Вы ввели недопустимое значение ({userInput}). Нужно ввести число от {minimumHiddenNumber} до {maximumHiddenNumber}");
-                    Console.WriteLine("#######################");
-                }
-                
-                
                 if (userInput == "выход")
                 {
                     Console.Clear();
                     Console.WriteLine("Вы вышли из игры!");
                     Environment.Exit(0);
                 }
+                
+                if (!isIntNumber)
+                {
+                    Console.WriteLine("#### Ошибка ввода! ####");
+                    Console.WriteLine($"Вы ввели недопустимое значение ({userInput}). Нужно ввести число от {minimumHiddenNumber} до {maximumHiddenNumber}");
+                    Console.WriteLine("#######################");
+                    continue;
+                }
+                else if (userNumber <= 0 || userNumber > 100)
+                {
+                    Console.WriteLine("#### Ошибка ввода! ####");
+                    Console.WriteLine($"Нужно ввести число от в правильном диапозоне от {minimumHiddenNumber} до {maximumHiddenNumber}");
+                    Console.WriteLine("#######################");
+                    continue;
+                }
+                
 
 
                 if (userNumber > secretNumber)
