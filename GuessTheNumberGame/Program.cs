@@ -58,7 +58,7 @@ namespace GuessTheNumberGame
                 else if (userNumber <= 0 || userNumber > 100)
                 {
                     Console.WriteLine("#### Ошибка ввода! ####");
-                    Console.WriteLine($"Нужно ввести число от в правильном диапозоне от {minimumHiddenNumber} до {maximumHiddenNumber}");
+                    Console.WriteLine($"Нужно ввести число в правильном диапозоне от {minimumHiddenNumber} до {maximumHiddenNumber}");
                     Console.WriteLine("#######################");
                     continue;
                 }
